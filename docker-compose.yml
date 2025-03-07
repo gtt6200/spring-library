@@ -1,0 +1,14 @@
+services:
+  mariadb:
+    image: mariadb:10.3.28
+    container_name: library-test
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: library
+    ports:
+      - "3307:3306"
+    volumes:
+      - mariadb-library-test:/var/lib/mysql
+
+volumes:
+  mariadb-library-test:
